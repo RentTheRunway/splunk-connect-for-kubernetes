@@ -32,6 +32,13 @@ Create chart name and version as used by the chart label.
 {{- end -}}
 
 {{/*
+Get namespace to deploy to.
+*/}}
+{{- define "splunk-kubernetes-logging.namespace" -}}
+    {{- default .Release.Namespace .Values.namespace -}}
+{{- end -}}
+
+{{/*
 Create chart name and version as used by the chart label.
 */}}
 {{- define "splunk-kubernetes-logging.secret" -}}
